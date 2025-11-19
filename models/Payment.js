@@ -61,6 +61,10 @@ const PaymentSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  snapToken: {  // ⬅ TAMBAHAN untuk Midtrans
+    type: String,
+    required: false,
+  },
   paidAt: {
     type: Date,
     required: false,
