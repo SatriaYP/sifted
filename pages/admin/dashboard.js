@@ -224,7 +224,6 @@ export default function AdminDashboard() {
             <option value="PAID">PAID</option>
             <option value="PENDING">PENDING</option>
             <option value="FAILED">FAILED</option>
-            <option value="EXPIRED">EXPIRED</option>
           </select>
         </div>
 
@@ -810,7 +809,7 @@ export default function AdminDashboard() {
               })}
             </div>
             <div className="text-[#37432B] font-semibold">
-              total : {payload[0].value.toLocaleString('id-ID')}
+              Rp {payload[0].value.toLocaleString('id-ID')}
             </div>
             {payload[0].payload.count > 0 && (
               <div className="text-[#6A6F4C] text-xs mt-1">
@@ -842,16 +841,16 @@ export default function AdminDashboard() {
               tick={{ fontSize: 12, fill: '#6A6F4C' }}
               tickLine={false}
               axisLine={{ stroke: '#E5D8CC' }}
-              tickFormatter={(value) => (value / 1000).toFixed(0)}
+              tickFormatter={(value) => (value / 1000).toFixed(0) + 'k'}
             />
             <Tooltip content={<CustomTooltip />} />
             <Line
               type="monotone"
               dataKey="total"
-              stroke="#6A6F4C"                // garis utama (olive green)
+              stroke="#6A6F4C"
               strokeWidth={2}
-              dot={{ fill: '#6A6F4C', r: 3 }} // titik data
-              activeDot={{ r: 5, fill: '#37432B' }} // titik aktif
+              dot={{ fill: '#6A6F4C', r: 3 }}
+              activeDot={{ r: 5, fill: '#37432B' }}
             />
           </LineChart>
         </ResponsiveContainer>
