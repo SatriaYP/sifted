@@ -351,7 +351,7 @@
 // }
 // // // pages/api/payments.js
 import { useState } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
 import { useRouter } from 'next/router';
 
 export default function PaymentPage() {
@@ -410,7 +410,7 @@ export default function PaymentPage() {
 
       // Check if script already loaded
       let scriptTag = document.querySelector(`script[src="${snapScript}"]`);
-      
+
       if (!scriptTag) {
         scriptTag = document.createElement('script');
         scriptTag.src = snapScript;
